@@ -1,0 +1,14 @@
+dracula-theme.theme-dracula
+esbenp.prettier-vscode
+foxundermoon.shell-format
+mads-hartmann.bash-ide-vscode
+miramac.vscode-exec-node
+monokai.theme-monokai-pro-vscode
+naumovs.color-highlight
+ritwickdey.LiveServer
+rogalmic.bash-debug
+Shan.code-settings-sync
+timonwong.shellcheck
+vscode-icons-team.vscode-icons
+wayou.vscode-todo-highlight
+XadillaX.viml

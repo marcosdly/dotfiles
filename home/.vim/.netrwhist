@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =3
+let g:netrw_dirhist_3='/home/marcosdly/.vim/colors'
+let g:netrw_dirhist_2='/home/marcosdly/.vim'
+let g:netrw_dirhist_1='/home/marcosdly'
+let g:netrw_dirhist_0='/home'
+let g:netrw_dirhist_9='/home/marcosdly'
+let g:netrw_dirhist_8='/home/marcosdly/.npm'
+let g:netrw_dirhist_7='/home/marcosdly'
+let g:netrw_dirhist_6='/home/marcosdly/.config/qtile/__pycache__'
+let g:netrw_dirhist_5='/etc/spectrwm'
+let g:netrw_dirhist_4='/home/marcosdly/.config/gtk-3.0'

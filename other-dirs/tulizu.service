@@ -1,0 +1,9 @@
+[Unit]
+Description=Start tulizu with arch's issue
+
+[Service]
+Type=oneshot
+ExecStart=tulizu show /usr/share/tulizu/issue/arch-shapeshifter.issue
+
+[Install]
+WantedBy=multi-user.target

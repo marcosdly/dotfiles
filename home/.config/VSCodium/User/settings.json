@@ -1,0 +1,95 @@
+{
+  // Sync
+  "settingsSync.keybindingsPerPlatform": false,
+  // TODO Highlight
+  "todohighlight.isEnable": true,
+  "todohighlight.isCaseSensitive": true,
+  "todohighlight.keywords": [
+    {
+      "text": "DEBUG:",
+      "color": "#ffffff",
+      "backgroundColor": "#ff0000",
+      "border": "1px solid #eee"
+    },
+    {
+      "text": "BUG:",
+      "color": "#ffffff",
+      "backgroundColor": "#ff0000",
+      "isWholeLine": true,
+      "border": "1px solid #eee"
+    },
+    {
+      "text": "REVIEW-bad:",
+      "color": "#ffee00",
+      "backgroundColor": "#ff0000"
+    },
+    {
+      "text": "REVIEW-good:",
+      "color": "#ffffff",
+      "backgroundColor": "#03bf00"
+    },
+    {
+      "text": "NOTE:",
+      "color": "#000",
+      "backgroundColor": "#fffb00"
+    },
+    {
+      "text": "TODO:",
+      "color": "#000",
+      "backgroundColor": "#fffb00",
+      "isWholeLine": true
+    },
+    {
+      "text": "FIXME",
+      "color": "#000",
+      "backgroundColor": "#ff9d00"
+    }
+  ],
+  "todohighlight.defaultStyle": {
+    // "overviewRulerColor": "#ffab00",
+    "cursor": "pointer",
+    "border": false,
+    "borderRadius": "2px",
+    "isWholeLine": false
+    //other styling properties goes here ...
+  },
+  // Color Info
+  "colorInfo.languages": [
+    {
+      "selector": "css",
+      "colors": "css"
+    },
+    {
+      "selector": "sass",
+      "colors": "css"
+    },
+    {
+      "selector": "scss",
+      "colors": "css"
+    },
+    {
+      "selector": "less",
+      "colors": "css"
+    }
+  ],
+  // Live Server
+  "liveServer.settings.AdvanceCustomBrowserCmdLine": "google-chrome-stable",
+  // vscode
+  "editor.fontLigatures": true,
+  "editor.fontFamily": "'fira code'",
+  "editor.cursorStyle": "block",
+  "editor.multiCursorModifier": "ctrlCmd",
+  "editor.wordWrap": "on",
+  "editor.formatOnSave": true,
+  "workbench.iconTheme": "vscode-icons",
+  "workbench.colorTheme": "Dracula Soft",
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "files.autoSave": "onFocusChange",
+  "editor.tabSize": 2,
+  "files.exclude": {
+    "**/.classpath": true,
+    "**/.project": true,
+    "**/.settings": true,
+    "**/.factorypath": true
+  }
+}

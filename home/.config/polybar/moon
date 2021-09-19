@@ -1,0 +1,377 @@
+# ██████╗  ██████╗ ██╗  ██╗   ██╗██████╗  █████╗ ██████╗ 
+# ██╔══██╗██╔═══██╗██║  ╚██╗ ██╔╝██╔══██╗██╔══██╗██╔══██╗
+# ██████╔╝██║   ██║██║   ╚████╔╝ ██████╔╝███████║██████╔╝
+# ██╔═══╝ ██║   ██║██║    ╚██╔╝  ██╔══██╗██╔══██║██╔══██╗
+# ██║     ╚██████╔╝███████╗██║   ██████╔╝██║  ██║██║  ██║
+# ╚═╝      ╚═════╝ ╚══════╝╚═╝   ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝
+# Polybar's 'moon' theme configuration by marcosdly
+# Check marcosdly/dotfiles on GitHub
+
+; ##############################
+; ###     Global settings    ###
+; ##############################
+
+[colors]
+background = #23252f
+;background-alt = #444
+
+foreground = #dfdfdf
+foreground-alt = #555
+
+primary = #ffb52a
+secondary = #e60053
+alert = #bd2c40
+
+[settings]
+screenchange-reload = true
+;compositing-background = xor
+;;compositing-background = screen
+;;compositing-foreground = source
+;;compositing-border = over
+;;pseudo-transparency = false
+
+[global/wm]
+margin-top = 0
+margin-bottom = 2
+
+; ##############################
+; ###          Bars          ###
+; ##############################
+
+[bar/moon1m]
+monitor = eDP1
+enable-ipc = true
+
+; To center the bar just set width = X% and offset-x = Y%, so that X + 2 * Y = 100
+width = 100%
+height = 24
+;offset-x = 5%
+;offset-y = 1%
+radius-top = 0.0
+radius-bottom = 0.0
+;radius-bottom = 9.0
+fixed-center = false
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+line-size = 0
+;line-color = #f00
+
+;border-size = 1
+;border-color = #807e84
+
+padding-left = 0
+padding-right = 2
+
+module-margin-left = 3
+module-margin-right = 2
+
+font-0 = "Noto Sans:regular:fontformat=opentype:pixelsize=10;2"
+font-1 = "unifont:fontformat=truetype:size=8:antialias=false;1"
+font-2 = "Noto Color Emoji:scale=10;3"
+font-3 = "Symbols Nerd Font:pixelsize=10;3"
+
+modules-left = ewmh
+modules-center = polybar-spotify
+modules-right = xbacklight alsa cpu memory wlan eth battery date powermenu systray-text
+
+tray-position = right
+;tray-padding = 2
+;tray-background = #0063ff
+
+#wm-restack = qtile
+#wm-name = qtile
+
+;scroll-up = bspwm-desknext
+;scroll-down = bspwm-deskprev
+
+cursor-click = pointer
+cursor-scroll = ns-resize
+
+; ##############################
+
+[bar/moon2m]
+inherit = bar/moon1m
+monitor = HDMI1
+
+; ##############################
+
+[bar/bspwm-moon1m]
+inherit = bar/moon1m
+monitor = eDP1
+
+modules-left = bspwm
+
+wm-restack = bspwm
+wm-name = bspwm
+
+; ##############################
+
+[bar/bspwm-moon2m]
+inherit = bar/bspwm-moon1m
+monitor = HDMI1
+
+; ##############################
+; ###        Modules         ###
+; ##############################
+
+[module/bspwm]
+type = internal/bspwm
+
+label-focused = "*%name%"
+label-focused-background = ${colors.background-alt}
+label-focused-underline= ${colors.primary}
+label-focused-padding = 2
+
+label-occupied = %name%
+label-occupied-padding = 2
+
+label-urgent = %name%!
+label-urgent-background = ${colors.alert}
+label-urgent-padding = 2
+
+label-empty = %name%
+label-empty-foreground = ${colors.foreground-alt}
+label-empty-padding = 2
+
+; Separator in between workspaces
+; label-separator = |
+
+; ##############################
+
+[module/systray-text]
+type = custom/text
+content = "%{T4}%{T-}"
+
+content-background = ${colors.background-alt}
+content-foreground = ${colors.foreground}
+content-padding = 0
+
+; ##############################
+
+[module/systray-spacer]
+type = custom/text
+content = " "
+
+content-background = ${colors.background-alt}
+content-foreground = ${colors.foreground}
+content-padding = 0
+
+; ##############################
+
+[module/ewmh]
+type = internal/xworkspaces
+
+pin-workspaces = true
+enable-click = true
+enable-scroll = true
+
+label-active = "*%name%"
+label-active-background = ${colors.background-alt}
+label-active-underline= ${colors.primary}
+label-active-padding = 2
+
+label-occupied = %name%
+label-occupied-padding = 2
+
+label-urgent = %name%!
+label-urgent-background = ${colors.alert}
+label-urgent-padding = 2
+
+label-empty = %name%
+label-empty-foreground = ${colors.foreground-alt}
+label-empty-padding = 2
+
+; ##############################
+
+[module/polybar-spotify]
+; Original: https://github.com/Jvanrhijn/polybar-spotify
+; Dependencies: playerctl (Arch: official repos)
+type = custom/script
+interval = 1
+format-prefix = "%{T4}%{T-}  "
+format = <label>
+exec = python ${HOME}/.config/polybar/spotify_status.py -f '{artist} - {song}'
+format-underline = #1db954
+;control players (optional)
+click-left = playerctl --player=spotify play-pause  
+click-right = playerctl --player=spotify next
+click-middle = playerctl --player=spotify previous
+
+; ##############################
+
+[module/xbacklight]
+type = internal/xbacklight
+card = intel_backlight
+
+;format-font = 3
+format = %{T3}<ramp>%{T-} <label>
+label = %percentage%%
+
+;format-NAME = xbacklight
+;format-xbacklight-font = 10
+
+ramp-0 = 🌑
+ramp-1 = 🌒
+ramp-2 = 🌓
+ramp-3 = 🌔
+ramp-4 = 🌕
+
+; ##############################
+
+[module/backlight-acpi]
+inherit = module/xbacklight
+type = internal/backlight
+card = intel_backlight
+
+; ##############################
+
+[module/alsa]
+type = internal/alsa
+format-font = 4
+
+format-volume = %{T4}<ramp-volume>%{T-} <label-volume>
+label-volume = %percentage%%
+label-volume-foreground = ${root.foreground}
+
+format-muted-foreground = ${colors.foreground-alt}
+label-muted = "%{T4}%{T-} muted"
+
+bar-volume-width = 8
+bar-volume-foreground-0 = #55aa55
+bar-volume-foreground-1 = #55aa55
+bar-volume-foreground-2 = #55aa55
+bar-volume-foreground-3 = #55aa55
+bar-volume-foreground-4 = #55aa55
+bar-volume-foreground-5 = #f5a70a
+bar-volume-foreground-6 = #ff5555
+bar-volume-gradient = false
+bar-volume-indicator = |
+;bar-volume-indicator-font = 2
+bar-volume-fill = 
+;bar-volume-fill-font = 2
+bar-volume-empty = 
+;bar-volume-empty-font = 2
+bar-volume-empty-foreground = ${colors.foreground-alt}
+
+ramp-volume-0 = 
+ramp-volume-1 = 
+ramp-volume-2 = 
+ramp-headphones-0 = 
+
+; ##############################
+
+[module/cpu]
+type = internal/cpu
+interval = 2
+format-font = 4
+; Gear 1:
+format-prefix = " "
+; PC screen:
+;format-prefix = " "
+; Gear 2:
+;format-prefix = " "
+format-prefix-foreground = ${colors.foreground}
+;format-underline = #f90000
+label = %percentage:2%%
+
+; ##############################
+
+[module/memory]
+type = internal/memory
+format-font = 4
+interval = 2
+format-prefix = "  "
+format-prefix-foreground = ${colors.foreground}
+format-underline = #4bffdc
+label = %percentage_used%%
+
+; ##############################
+
+[module/wlan]
+type = internal/network
+format-font = 4
+interface = wlp1s0
+interval = 3.0
+
+format-connected = <label-connected>
+format-connected-underline = #9f78e1
+label-connected = "%{T4}直%{T-} %essid%  %signal%"
+;label-connected = "直 %essid%   %signal%"
+
+format-disconnected = <label-disconnected>
+;format-disconnected-underline = ${self.format-connected-underline}
+label-disconnected = "%{T4}睊%{T-}"
+;label-disconnected-foreground = ${colors.foreground-alt}
+
+; ##############################
+
+[module/eth]
+type = internal/network
+format-font = 4
+interface = enp2s0
+interval = 3.0
+
+format-connected-underline = #55aa55
+format-connected-prefix = "囹 "
+format-connected-prefix-foreground = ${colors.foreground}
+label-connected = " ON"
+
+;format-disconnected = <label-disconnected>
+;format-disconnected-underline = ${self.format-connected-underline}
+label-disconnected = "囹  OFF"
+;label-disconnected-foreground = ${colors.foreground-alt}
+
+; ##############################
+
+[module/battery]
+type = internal/battery
+battery = BAT1
+adapter = ADP1
+full-at = 98
+format-font = 4
+;label-discharging-font = 4
+
+time-format = %H:%M
+
+format-charging = <ramp-capacity> <label-charging>
+label-charging = "%percentage%% %{T4}%{T-} %time%"
+;format-charging-underline = #ffb52a
+
+format-discharging = <ramp-capacity> <label-discharging>
+label-discharging = " %percentage%% %{T4}%{T-} %time%"
+;format-discharging-underline = ${self.format-charging-underline}
+
+label-full = " %percentage%%"
+
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+ramp-capacity-foreground = ${colors.foreground}
+
+; ##############################
+
+[module/date]
+type = internal/date
+interval = 5
+
+date = "%Y/%m/%d"
+;date-alt = "%Y/%m/%d"
+
+time = %H:%M
+;time-alt = %H:%M
+
+format-prefix = 
+format-prefix-foreground = ${colors.foreground-alt}
+format-underline = #0a6cf5
+
+;label = "%{T4}%{T-} %date% %time%"
+label = "%{T4}%{T-}  %date% %time%"
+;label = "%{T4}%{T-} %date% %time%"
+
+;########################################################################
+
+; vim:ft=dosini
