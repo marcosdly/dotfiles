@@ -152,7 +152,7 @@ sudo pacman -S grub-customizer gucharmap htop steam retroarch
 These are dependencies that are not installed automatically with their respective packages. Usually they are packages required by custom configurations.
 
 ```
-sudo pacman -S acpi xsel ttf-nerd-fonts-symbols noto-fonts ttf-fira-code playerctl
+sudo pacman -S acpi xsel ttf-nerd-fonts-symbols noto-fonts ttf-fira-code playerctl python-psutil
 ```
 
 #### Description
@@ -163,13 +163,14 @@ sudo pacman -S acpi xsel ttf-nerd-fonts-symbols noto-fonts ttf-fira-code playerc
 4. `noto-fonts`: Polybar's main font.
 5. `ttf-fira-code`: VSCodium, and alternatively alacritty's font.
 6. `playerctl`: Media player controller that I use with spotify.
+7. `python-psutil`: python lib to monitor system resourcers.
 
 ### Everything
 
 #### Official Repos
 
 ```
-sudo pacman -S zsh curl git base-devel vim xorg alacritty bspwm sxhkd feh picom lxsession gtk2 gtk3 gtk4 breeze-gtk breeze-icons discord flameshot thunar pavucontrol vlc gimp eog blueman kdenlive obs-studio handbrake gnome-calculator gedit grub-customizer gucharmap htop steam retroarch acpi xsel ttf-nerd-fonts-symbols noto-fonts ttf-fira-code playerctl
+sudo pacman -S zsh curl git base-devel vim xorg alacritty bspwm sxhkd feh picom lxsession gtk2 gtk3 gtk4 breeze-gtk breeze-icons discord flameshot thunar pavucontrol vlc gimp eog blueman kdenlive obs-studio handbrake gnome-calculator gedit grub-customizer gucharmap htop steam retroarch acpi xsel ttf-nerd-fonts-symbols noto-fonts ttf-fira-code playerctl python-psutil
 ```
 
 #### AUR
