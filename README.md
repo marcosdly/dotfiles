@@ -31,7 +31,7 @@ Check my [wallpapers](https://github.com/marcosdly/wallpapers) repository.
 7. [picom](https://github.com/yshui/picom): Compositor.
 8. [feh](https://feh.finalrewind.org/): Wallpaper setter.
 
-## KDE Plasma
+### KDE Plasma
 
 1. Theming:
     * [Fancy-Global](https://store.kde.org/p/1598652): Global theme.
