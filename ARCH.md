@@ -39,9 +39,9 @@ sudo pacman -S zsh curl git base-devel vim
 
 1. [`yay`](https://github.com/Jguer/yay): AUR Helper.
 
-### Desktop
+### Tiling Window Manager
 
-Basic stuff needed to build a graphic environment.
+Basic stuff needed to build a graphic environment with a tiling window manager.
 
 ```
 sudo pacman -S xorg alacritty bspwm sxhkd feh picom lxsession
@@ -63,6 +63,21 @@ yay -S tulizu tbsm polybar
 8. `feh`: Background setter and image viewer.
 9. `picom`: Compositor.
 10. `lxsession`: Policy kit.
+
+### Desktop Environment
+
+Packages to set up my dektop environments.
+
+```
+sudo pacman -S plasma dolphin gwenview okular
+```
+
+#### Description
+
+1. `plasma`: Basic KDE Plasma meta-package.
+    * `dolphin`: Graphical file manager.
+    * `gwenview`: Image viewer.
+    * `okular`: Document viewer.
 
 ### GTK, icons, and cursor
 
@@ -170,7 +185,7 @@ sudo pacman -S acpi xsel ttf-nerd-fonts-symbols noto-fonts ttf-fira-code playerc
 #### Official Repos
 
 ```
-sudo pacman -S zsh curl git base-devel vim xorg alacritty bspwm sxhkd feh picom lxsession gtk2 gtk3 gtk4 breeze-gtk breeze-icons discord flameshot thunar pavucontrol vlc gimp eog blueman kdenlive obs-studio handbrake gnome-calculator gedit grub-customizer gucharmap htop steam retroarch acpi xsel ttf-nerd-fonts-symbols noto-fonts ttf-fira-code playerctl python-psutil
+sudo pacman -S zsh curl git base-devel vim xorg alacritty bspwm sxhkd feh picom lxsession gtk2 gtk3 gtk4 breeze-gtk breeze-icons discord flameshot thunar pavucontrol vlc gimp eog blueman kdenlive obs-studio handbrake gnome-calculator gedit grub-customizer gucharmap htop steam retroarch acpi xsel ttf-nerd-fonts-symbols noto-fonts ttf-fira-code playerctl python-psutil plasma dolphin gwenview okular
 ```
 
 #### AUR

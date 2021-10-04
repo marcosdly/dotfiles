@@ -8,9 +8,11 @@ Besides that, eventually I will be using other distros like Debian just for the 
 
 ### Moon (bspwm + Polybar)
 
-![Desktop](https://raw.githubusercontent.com/marcosdly/dotfiles/master/screenshots/bspwm-moon-01.png)
+![bspwm](https://raw.githubusercontent.com/marcosdly/dotfiles/master/screenshots/bspwm-moon-02.png)
 
-![Desktop with terminal](https://raw.githubusercontent.com/marcosdly/dotfiles/master/screenshots/bspwm-moon-02.png)
+### KDE Plasma (Fancy + Ant Dracula) 
+
+![plasma](https://raw.githubusercontent.com/marcosdly/dotfiles/master/screenshots/plasma-fancy-02.png)
 
 ## Wallpapers
 
@@ -18,7 +20,7 @@ Check my [wallpapers](https://github.com/marcosdly/wallpapers) repository.
 
 ## Stuff I use
 
-### Desktop
+### Tiling Window Manager
 
 1. [X](https://www.x.org/wiki/): Display server.
 2. [tbsm](https://loh-tar.github.io/tbsm/): CLI login manager.
@@ -28,6 +30,25 @@ Check my [wallpapers](https://github.com/marcosdly/wallpapers) repository.
 6. [lxsession](https://wiki.lxde.org/en/LXSession): Policy kit.
 7. [picom](https://github.com/yshui/picom): Compositor.
 8. [feh](https://feh.finalrewind.org/): Wallpaper setter.
+
+## KDE Plasma
+
+1. Theming:
+    * [Fancy-Global](https://store.kde.org/p/1598652): Global theme.
+    * [Fancy-Plasma](https://www.pling.com/p/1598649): Plasma theme.
+    * [Fancy-Dark-Color](https://store.kde.org/p/1598635): Color scheme.
+    * [Fancy-Kvantum](https://www.pling.com/p/1598643): Kvantum theme.
+    * [Fancy-Aurorae](https://store.kde.org/p/1598633): Window decorations.
+    * [Ant Dracula](https://www.pling.com/p/1099856): GTK theme (default style).
+    * [YAPLASS ArchLinux](https://www.pling.com/p/1477196): Splash screen.
+    * [Fancy-SDDM](https://store.kde.org/p/1598626): SDDM theme.
+    * [BeautyLine](https://www.pling.com/p/1425426): Icons.
+    * [Mocu](https://www.pling.com/p/1526606): Cursor.
+2. Fonts:
+    * All default.
+2. [Dolphin](https://apps.kde.org/dolphin/): Graphical file manager.
+3. [Gwenview](https://apps.kde.org/gwenview/): Image viewer.
+4. [Okular](https://apps.kde.org/okular/): Document viewer.
 
 ### Utilities
 
