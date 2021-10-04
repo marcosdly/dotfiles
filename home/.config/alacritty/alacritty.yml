@@ -185,13 +185,57 @@ font:
 #draw_bold_text_with_bright_colors: false
 
 # Colors (Tomorrow Night)
-colors:
-  # Default colors
-  primary:
-  #  background: '#1d1f21' # default
-     background: '#000000' 
-  #  foreground: '#c5c8c6' # default
-     forefround: '#ffffff'
+schemes:
+  gogh-aco: &aco
+    primary:
+      background: '#000000' 
+      foreground: '#ffffff'
+    normal:
+      black:   '#3f3f3f'
+      red:     '#ff0883'
+      green:   '#83ff08'
+      yellow:  '#ff8308'
+      blue:    '#0883ff'
+      magenta: '#8308ff'
+      cyan:    '#08ff83'
+      white:   '#bebebe'
+    bright:
+      black:   '#474747'
+      red:     '#ff1e8e'
+      green:   '#8eff1e'
+      yellow:  '#ff8e1e'
+      blue:    '#1e8eff'
+      magenta: '#8e1eff'
+      cyan:    '#1eff8e'
+      white:   '#c4c4c4'
+
+  argonaut: &argonaut
+    primary:
+      background: '0x292C3E'
+      foreground: '0xEBEBEB'
+    #cursor:
+    #text: '0xFF261E'
+    #cursor: '0xFF261E'
+    normal:
+      black:   '0x0d0d0d'
+      red:     '0xFF301B'
+      green:   '0xA0E521'
+      yellow:  '0xFFC620'
+      blue:    '0x1BA6FA'
+      magenta: '0x8763B8'
+      cyan:    '0x21DEEF'
+      white:   '0xEBEBEB'
+    bright:
+      black:   '0x6D7070'
+      red:     '0xFF4352'
+      green:   '0xB8E466'
+      yellow:  '0xFFD750'
+      blue:    '0x1BA6FA'
+      magenta: '0xA578EA'
+      cyan:    '0x73FBF1'
+      white:   '0xFEFEF8'
+
+colors: *argonaut
 
     # Bright and dim foreground colors
     #
@@ -276,29 +320,6 @@ colors:
   #selection:
   #  text: CellBackground
   #  background: CellForeground
-
-  # Normal colors
-  # !!!!! Colors from Gogh - Aco
-  normal:
-    black:   '#3f3f3f'
-    red:     '#ff0883'
-    green:   '#83ff08'
-    yellow:  '#ff8308'
-    blue:    '#0883ff'
-    magenta: '#8308ff'
-    cyan:    '#08ff83'
-    white:   '#bebebe'
-
-  # Bright colors
-  bright:
-    black:   '#474747'
-    red:     '#ff1e8e'
-    green:   '#8eff1e'
-    yellow:  '#ff8e1e'
-    blue:    '#1e8eff'
-    magenta: '#8e1eff'
-    cyan:    '#1eff8e'
-    white:   '#c4c4c4'
 
   # Dim colors
   #
