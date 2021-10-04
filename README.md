@@ -46,9 +46,9 @@ Check my [wallpapers](https://github.com/marcosdly/wallpapers) repository.
     * [Mocu](https://www.pling.com/p/1526606): Cursor.
 2. Fonts:
     * All default.
-2. [Dolphin](https://apps.kde.org/dolphin/): Graphical file manager.
-3. [Gwenview](https://apps.kde.org/gwenview/): Image viewer.
-4. [Okular](https://apps.kde.org/okular/): Document viewer.
+3. [Dolphin](https://apps.kde.org/dolphin/): Graphical file manager.
+4. [Gwenview](https://apps.kde.org/gwenview/): Image viewer.
+5. [Okular](https://apps.kde.org/okular/): Document viewer.
 
 ### Utilities
 
@@ -59,12 +59,14 @@ Check my [wallpapers](https://github.com/marcosdly/wallpapers) repository.
     * [nothing](https://github.com/eendroroy/nothing): zsh theme.
 2. [yay](https://github.com/Jguer/yay): AUR helper.
 3. [Alacritty](https://github.com/alacritty/alacritty): Terminal emulator.
-4. [Thunar](https://docs.xfce.org/xfce/thunar/start): Graphical file manager.
-5. [Gnome calculator](https://wiki.gnome.org/Apps/Calculator): Graphical calculator.
-6. [Grub customizer](https://github.com/mdeguzis/grub-customizer): Settings manager for grub2.
-7. [gucharmap](https://wiki.gnome.org/Apps/Gucharmap): Check every character available for a specific font.
-8. [Htop](https://htop.dev/): System monitor.
-9. [tulizu](https://loh-tar.github.io/tulizu/): ascii art displayer.
+4. [Kitty](https://sw.kovidgoyal.net/kitty/): Terminal emulator (default).
+5. [Thunar](https://docs.xfce.org/xfce/thunar/start): Graphical file manager.
+6. [Gnome calculator](https://wiki.gnome.org/Apps/Calculator): Graphical calculator.
+7. [Grub customizer](https://github.com/mdeguzis/grub-customizer): Settings manager for grub2.
+8. [gucharmap](https://wiki.gnome.org/Apps/Gucharmap): Check every character available for a specific font.
+9. [Htop](https://htop.dev/): System monitor.
+10. [tulizu](https://loh-tar.github.io/tulizu/): ascii art displayer.
+11. [cmst](https://github.com/andrew-bibb/cmst): Qt based GUI and applet for connman.
 
 ### Media
 

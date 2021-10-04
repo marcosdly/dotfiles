@@ -44,11 +44,11 @@ sudo pacman -S zsh curl git base-devel vim
 Basic stuff needed to build a graphic environment with a tiling window manager.
 
 ```
-sudo pacman -S xorg alacritty bspwm sxhkd feh picom lxsession
+sudo pacman -S xorg alacritty bspwm sxhkd feh picom lxsession kitty
 ```
 
 ```
-yay -S tulizu tbsm polybar
+yay -S tulizu tbsm polybar cmst
 ```
 
 #### Description
@@ -58,11 +58,13 @@ yay -S tulizu tbsm polybar
 3. `tbsm`: CLI login manager.
 4. `bspwm`: Window Manager.
 5. `polybar`: Status bar.
-6. `alacritty`: Terminal emulator (default).
-7. `sxhkd`: Key bindings setter.
-8. `feh`: Background setter and image viewer.
-9. `picom`: Compositor.
-10. `lxsession`: Policy kit.
+6. `alacritty`: Terminal emulator.
+7. `kitty`: Terminal emulator (default).
+8. `sxhkd`: Key bindings setter.
+9. `feh`: Background setter and image viewer.
+10. `picom`: Compositor.
+11. `lxsession`: Policy kit.
+12. `cmst`: Qt based GUI for connman with applet.
 
 ### Desktop Environment
 
@@ -185,11 +187,11 @@ sudo pacman -S acpi xsel ttf-nerd-fonts-symbols noto-fonts ttf-fira-code playerc
 #### Official Repos
 
 ```
-sudo pacman -S zsh curl git base-devel vim xorg alacritty bspwm sxhkd feh picom lxsession gtk2 gtk3 gtk4 breeze-gtk breeze-icons discord flameshot thunar pavucontrol vlc gimp eog blueman kdenlive obs-studio handbrake gnome-calculator gedit grub-customizer gucharmap htop steam retroarch acpi xsel ttf-nerd-fonts-symbols noto-fonts ttf-fira-code playerctl python-psutil plasma dolphin gwenview okular
+sudo pacman -S zsh curl git base-devel vim xorg alacritty bspwm sxhkd feh picom lxsession gtk2 gtk3 gtk4 breeze-gtk breeze-icons discord flameshot thunar pavucontrol vlc gimp eog blueman kdenlive obs-studio handbrake gnome-calculator gedit grub-customizer gucharmap htop steam retroarch acpi xsel ttf-nerd-fonts-symbols noto-fonts ttf-fira-code playerctl python-psutil plasma dolphin gwenview okular kitty
 ```
 
 #### AUR
 
 ```
-yay -S tulizu tbsm polybar mocu-xcursor megasync-bin thunar-megasync-bin spotify evince-no-gnome droidcam vscodium-bin brave-bin
+yay -S tulizu tbsm polybar mocu-xcursor megasync-bin thunar-megasync-bin spotify evince-no-gnome droidcam vscodium-bin brave-bin cmst
 ```
