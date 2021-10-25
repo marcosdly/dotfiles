@@ -44,7 +44,7 @@ sudo pacman -S zsh curl git base-devel vim
 Basic stuff needed to build a graphic environment with a tiling window manager.
 
 ```
-sudo pacman -S xorg alacritty bspwm sxhkd feh picom lxsession kitty
+sudo pacman -S xorg bspwm sxhkd feh picom lxsession kitty
 ```
 
 ```
@@ -58,20 +58,19 @@ yay -S tulizu tbsm polybar cmst
 3. `tbsm`: CLI login manager.
 4. `bspwm`: Window Manager.
 5. `polybar`: Status bar.
-6. `alacritty`: Terminal emulator.
-7. `kitty`: Terminal emulator (default).
-8. `sxhkd`: Key bindings setter.
-9. `feh`: Background setter and image viewer.
-10. `picom`: Compositor.
-11. `lxsession`: Policy kit.
-12. `cmst`: Qt based GUI for connman with applet.
+6. `kitty`: Terminal emulator (default).
+7. `sxhkd`: Key bindings setter.
+8. `feh`: Background setter and image viewer.
+9. `picom`: Compositor.
+10. `lxsession`: Policy kit.
+11. `cmst`: Qt based GUI for connman with applet.
 
 ### Desktop Environment
 
 Packages to set up my dektop environments.
 
 ```
-sudo pacman -S plasma dolphin gwenview okular
+sudo pacman -S plasma dolphin gwenview okular kate
 ```
 
 #### Description
@@ -80,6 +79,8 @@ sudo pacman -S plasma dolphin gwenview okular
     * `dolphin`: Graphical file manager.
     * `gwenview`: Image viewer.
     * `okular`: Document viewer.
+    * `kate`: Text editor.
+    * `kcharselect`: Check and select special characters. 
 
 ### GTK, icons, and cursor
 
@@ -88,7 +89,7 @@ sudo pacman -S gtk2 gtk3 gtk4 breeze-gtk breeze-icons
 ```
 
 ```
-yay -S mocu-xcursor
+yay -S mocu-xcursor beautyline
 ```
 
 #### Description
@@ -99,6 +100,7 @@ yay -S mocu-xcursor
 4. `breeze-gtk`: Breeze theme for GTK.
 5. `breeze-icons`: Breeze icons theme.
 6. `mocu-xcursor`: Mocu cursor, my favourite.
+7. `beautyline`: BeautyLine icons theme.
 
 ### Media
 
@@ -109,7 +111,7 @@ sudo pacman -S discord flameshot thunar pavucontrol vlc gimp eog blueman kdenliv
 ```
 
 ```
-yay -S megasync-bin thunar-megasync-bin spotify evince-no-gnome droidcam
+yay -S megasync-bin thunar-megasync-bin dolphin-megasync-bin spotify evince-no-gnome droidcam
 ```
 
 #### Description
@@ -130,6 +132,7 @@ yay -S megasync-bin thunar-megasync-bin spotify evince-no-gnome droidcam
 14. `spotify`: Music streaming service.
 15. `megasync-bin`: Cloud service.
     * `thunar-megasync-bin`: Mega Sync plugin for Thunar.
+    * `dolphin-megasync-bin`: Mega Sync plugin for Dolphin.
 
 ### Day-to-day
 
@@ -140,14 +143,14 @@ sudo pacman -S gnome-calculator gedit
 ```
 
 ```
-yay -S vscodium-bin brave-bin
+yay -S vscodium-bin librewolf-bin
 ```
 
 #### Description
 
 1. `gnome-calculator`: Graphical calculator.
 2. `vscodium-bin`: vscode without branding/telemetry/licensing.
-3. `brave-bin`: Web browser.
+3. `librewolf-bin`: Web browser.
 4. `gedit`: GNOME's text editor.
 
 ### Others
@@ -159,7 +162,7 @@ sudo pacman -S grub-customizer gucharmap htop steam retroarch
 ```
 
 1. `grub-customizer`: Graphical settings manager for grub2.
-2. `gucharmap`: Check every character available for a specific font.
+2. `gucharmap`: Check and select special characters.
 3. `htop`: System monitor.
 4. `steam`: PC gaming platform.
 5. `retroarch`: Retro gaming.
@@ -178,20 +181,20 @@ sudo pacman -S acpi xsel ttf-nerd-fonts-symbols noto-fonts ttf-fira-code playerc
 2. `xsel`: X selection manipulation program that I use to copy text from Vim to system's clipboard.
 3. `ttf-nerd-fonts-symbols`: Required to display icons on Polybar.
 4. `noto-fonts`: Polybar's main font.
-5. `ttf-fira-code`: VSCodium, and alternatively alacritty's font.
+5. `ttf-fira-code`: VSCodium's font.
 6. `playerctl`: Media player controller that I use with spotify.
-7. `python-psutil`: python lib to monitor system resourcers.
+7. `python-psutil`: python lib to monitor system resourcers (qtile).
 
 ### Everything
 
 #### Official Repos
 
 ```
-sudo pacman -S zsh curl git base-devel vim xorg alacritty bspwm sxhkd feh picom lxsession gtk2 gtk3 gtk4 breeze-gtk breeze-icons discord flameshot thunar pavucontrol vlc gimp eog blueman kdenlive obs-studio handbrake gnome-calculator gedit grub-customizer gucharmap htop steam retroarch acpi xsel ttf-nerd-fonts-symbols noto-fonts ttf-fira-code playerctl python-psutil plasma dolphin gwenview okular kitty
+sudo pacman -S zsh curl git base-devel vim xorg bspwm sxhkd feh picom lxsession gtk2 gtk3 gtk4 breeze-gtk breeze-icons discord flameshot thunar pavucontrol vlc gimp eog blueman kdenlive obs-studio handbrake gnome-calculator gedit grub-customizer gucharmap htop steam retroarch acpi xsel ttf-nerd-fonts-symbols noto-fonts ttf-fira-code playerctl python-psutil plasma dolphin gwenview okular kitty
 ```
 
 #### AUR
 
 ```
-yay -S tulizu tbsm polybar mocu-xcursor megasync-bin thunar-megasync-bin spotify evince-no-gnome droidcam vscodium-bin brave-bin cmst
+yay -S tulizu tbsm polybar mocu-xcursor megasync-bin thunar-megasync-bin spotify evince-no-gnome droidcam vscodium-bin brave-bin cmst beautyline
 ```
