@@ -52,8 +52,8 @@ if [ -x "$(command -v yay)" ]; then
 	persian-hm-ftx-fonts persian-hm-xs2-fonts gandom-fonts gandom-fonts gandom-fonts \
 	gandom-fonts gandom-fonts gandom-fonts gandom-fonts gandom-fonts ttf-yas ttf-x2 \
 	fonts-tlwg ttf-lao ttf-lao-fonts ttf-myanmar-fonts ttf-twemoji otf-openmoji \
-	ttf-twemoji-color ttf-symbola otf-stix ttf-computer-modern-fonts \
-	ttf-computer-modern-fonts ttf-mathtype ttf-mac-fonts \
+	ttf-twemoji-color ttf-symbola otf-stix \
+	ttf-mathtype ttf-mac-fonts \
 	ttf-freebanglafont ibus-avro-git openbangla-keyboard \
 	noto-fonts-sc noto-fonts-tc ttf-tw ttf-twcns-fonts ttf-ms-win8-zh_cn \
 	ttf-ms-win8-zh_tw ttf-ms-win10-zh_cn ttf-ms-win10-zh_tw ttf-i.bming \
