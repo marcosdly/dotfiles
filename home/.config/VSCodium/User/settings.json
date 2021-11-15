@@ -82,7 +82,7 @@
   "editor.wordWrap": "on",
   "editor.formatOnSave": true,
   "workbench.iconTheme": "vscode-icons",
-  "workbench.colorTheme": "Dracula Soft",
+  "workbench.colorTheme": "Bearded Theme Vivid Black",
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "files.autoSave": "onFocusChange",
   "editor.tabSize": 2,
@@ -91,5 +91,17 @@
     "**/.project": true,
     "**/.settings": true,
     "**/.factorypath": true
-  }
+  },
+  "window.menuBarVisibility": "toggle",
+  "editor.suggestSelection": "first",
+  // Python
+  "python.pythonPath": "/bin/python",
+  "python.languageServer": "Jedi",
+  "python.analysis.typeCheckingMode": "strict",
+  "python.linting.pylintEnabled": true,
+  "python.linting.mypyEnabled": false,
+  "python.linting.flake8Enabled": false,
+  "python.testing.unittestEnabled": true,
+  // intellicode
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue"
 }
