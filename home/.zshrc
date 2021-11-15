@@ -93,7 +93,7 @@ export LANG=en_US.UTF-8
 
 # Environment variables
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#666666"
-
+export PATH="$PATH:/home/marcosdly/.local/bin"
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
@@ -116,10 +116,14 @@ export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#666666"
 
 alias ls="pwd && ls --color=always"
 alias ll="ls -la"
+alias py="python"
+alias py2="python2"
+alias py3="python3"
+
 
 # neofetch
-echo " "
-neofetch
+#echo " "
+#neofetch
 
 # nvm
 #export NVM_DIR="$HOME/.nvm"
