@@ -14,11 +14,7 @@ The configuration files to my Arch Linux setup are the ones on the [home](https:
 
 Basic packages for the system.
 
-```
-sudo pacman -S zsh curl git base-devel vim
-```
-
-#### Description
+#### Official Repositories
 
 1. `zsh`: Shell.
     * [oh-my-zsh](https://github.com/ohmyzsh/ohmyzsh/): zsh framework.
@@ -34,148 +30,123 @@ sudo pacman -S zsh curl git base-devel vim
       * [vim-system-copy](https://github.com/christoomey/vim-system-copy): Copy text to system's clipboard.
     * [monokai_pro](https://github.com/Erichain/vim-monokai-pro): Vim theme.
     * [vim-airline](https://github.com/vim-airline/vim-airline): Custom status line for Vim.
+6. `pipewire`: Low-latency audio/video router and processor.
+    * `pipewire-docs`: Documentation.
+    * `pipewire-alsa`: ALSA configuration.
+    * `pipewire-jack`: JACK support.
+    * `pipewire-pulse`: PulseAudio replacement.
+    * `pipewire-v4l2`: V4L2 interceptor
+    * `pipewire-zeroconf`: Zeroconf support
+    * `gst-plugin-pipewire`: GStreamer plugin.
+    * `wireplumber`: Session manager.
+    * `wireplumber-docs`: Session manager documentation.
+7. `grub-btrfs`: Snapshot selection on grub.
+8. `links`: CLI web browser with almost no dependencies.
 
-### AUR Helper (yay).
+#### AUR
 
 1. [`yay`](https://github.com/Jguer/yay): AUR Helper.
+2. `timeshift`: System snapshots.
+    * `timeshift-autosnap`: Automatic snapshots.
 
 ### Tiling Window Manager
 
 Basic stuff needed to build a graphic environment with a tiling window manager.
 
-```
-sudo pacman -S xorg bspwm sxhkd feh picom lxsession kitty
-```
-
-```
-yay -S tulizu tbsm polybar cmst
-```
-
-#### Description
+#### Official Repositories
 
 1. `xorg`: Display server.
-2. `tulizu`: ascii art displayer that I use on the tty.
-3. `tbsm`: CLI login manager.
-4. `bspwm`: Window Manager.
-5. `polybar`: Status bar.
-6. `kitty`: Terminal emulator (default).
-7. `sxhkd`: Key bindings setter.
-8. `feh`: Background setter and image viewer.
-9. `picom`: Compositor.
-10. `lxsession`: Policy kit.
-11. `cmst`: Qt based GUI for connman with applet.
+2. `bspwm`: Window Manager.
+3. `qtile`: Window Manager.
+4. `kitty`: Terminal emulator (default).
+5. `sxhkd`: Key bindings setter.
+6. `feh`: Background setter and image viewer.
+7. `picom`: Compositor.
+8. `lxsession`: Policy kit.
+9. `rofi`: Application launcher.
 
-### Desktop Environment
+#### AUR
 
-Packages to set up my dektop environments.
+1. `tulizu`: ascii art displayer that I use on the tty.
+2. `tbsm`: CLI login manager.
+3. `polybar`: Status bar.
+4. `cmst`: Qt based GUI for connman with applet.
+5. `network-manager-applet`: Applet for managing NetworkManager.
 
-```
-sudo pacman -S plasma dolphin gwenview okular kate
-```
+### Appearance
 
-#### Description
-
-1. `plasma`: Basic KDE Plasma meta-package.
-    * `dolphin`: Graphical file manager.
-    * `gwenview`: Image viewer.
-    * `okular`: Document viewer.
-    * `kate`: Text editor.
-    * `kcharselect`: Check and select special characters. 
-
-### GTK, icons, and cursor
-
-```
-sudo pacman -S gtk2 gtk3 gtk4 breeze-gtk breeze-icons
-```
-
-```
-yay -S mocu-xcursor beautyline
-```
-
-#### Description
+#### Official Repositories
 
 1. `gtk2`: GTK2.
 2. `gtk3`: GTK3.
-3. `gtk4`: GTK4.
 4. `breeze-gtk`: Breeze theme for GTK.
 5. `breeze-icons`: Breeze icons theme.
-6. `mocu-xcursor`: Mocu cursor, my favourite.
-7. `beautyline`: BeautyLine icons theme.
+6. `arc-solid-gtk-theme`: Arc theme for GTK (no transparency).
+7. `papirus-icon-theme`: Breeze icons theme.
+8. `kvantum-qt5`: QT5 theme engine.
+9. `qt5ct`: QT5 configuration utility.
+
+#### AUR
+
+1. `mocu-xcursor`: Mocu cursor, my favourite.
+2. `beautyline`: BeautyLine icons theme.
 
 ### Media
 
 Applications that I use to manage, play and manipulate media
 
-```
-sudo pacman -S discord flameshot thunar pavucontrol vlc gimp eog blueman kdenlive obs-studio handbrake
-```
-
-```
-yay -S megasync-bin thunar-megasync-bin dolphin-megasync-bin spotify evince-no-gnome droidcam
-```
-
-#### Description
+#### Official Repositories
 
 1. `gimp`: Image editor.
 2. `obs-studio`: Screen recorder and streaming.
 3. `kdenlive`: Video editor.
 4. `handbrake`: Video transcoder.
-5. `droidcam`: Converto phone into webcam/mic.
-6. `eog`: Eye of gnome.
-7. `evince-no-gnome`: GNOME's evince without GNOME stuff.
-8. `vlc`: Media player.
-9. `blueman`: Bluetooth manager.
-10. `pavucontrol`: PulseAudio volume controller.
-11. `flameshot`: Screenshot tool.
-12. `thunar`: Graphical file manager.
-13. `discord`: Social network.
-14. `spotify`: Music streaming service.
-15. `megasync-bin`: Cloud service.
-    * `thunar-megasync-bin`: Mega Sync plugin for Thunar.
-    * `dolphin-megasync-bin`: Mega Sync plugin for Dolphin.
+5. `vlc`: Media player.
+6. `blueman`: Bluetooth manager.
+7. `pavucontrol`: PulseAudio volume controller.
+8. `flameshot`: Screenshot tool.
+9. `pcmanfm-qt`: Graphical file manager.
+10. `discord`: Social network.
+11. `transmission-qt`: Torrent client.
+12. `featherpad`: Simple text editor.
+
+#### AUR
+
+1. `evince-no-gnome`: GNOME's evince without GNOME stuff.
+2. `droidcam`: Converto phone into webcam/mic.
+3. `spotify`: Music streaming service.
+4. `megasync-bin`: Cloud service.
+5. `photoqt`: Image viewer.
+6. `peazip-qt-bin`: Archiver.
+7. `font-manager`: Font view and management.
 
 ### Day-to-day
 
-Programs that use day-to-day, but aren't in a specific category.
+Programs that I use all the time.
 
-```
-sudo pacman -S gnome-calculator gedit
-```
+#### Official Repositories
 
-```
-yay -S vscodium-bin librewolf-bin
-```
+1. `qalculator-gtk`: Graphical calculator.
 
-#### Description
+#### AUR
 
-1. `gnome-calculator`: Graphical calculator.
-2. `vscodium-bin`: vscode without branding/telemetry/licensing.
-3. `librewolf-bin`: Web browser.
-4. `gedit`: GNOME's text editor.
+1. `vscodium-bin`: vscode without branding/telemetry/licensing.
+2. `librewolf-bin`: Web browser.
 
 ### Others
 
 Applications that I don't use so often, but inevitably use.
 
-```
-sudo pacman -S grub-customizer gucharmap htop steam retroarch
-```
+#### Official Repositories
 
 1. `grub-customizer`: Graphical settings manager for grub2.
-2. `gucharmap`: Check and select special characters.
-3. `htop`: System monitor.
-4. `steam`: PC gaming platform.
-5. `retroarch`: Retro gaming.
+2. `htop`: System monitor.
 
 ### Dependencies
 
 These are dependencies that are not installed automatically with their respective packages. Usually they are packages required by custom configurations.
 
-```
-sudo pacman -S acpi xsel ttf-nerd-fonts-symbols noto-fonts ttf-fira-code playerctl python-psutil
-```
-
-#### Description
+#### Official Repositories
 
 1. `acpi`: Laptop's screen brightness control by Polybar's module.
 2. `xsel`: X selection manipulation program that I use to copy text from Vim to system's clipboard.
@@ -185,16 +156,3 @@ sudo pacman -S acpi xsel ttf-nerd-fonts-symbols noto-fonts ttf-fira-code playerc
 6. `playerctl`: Media player controller that I use with spotify.
 7. `python-psutil`: python lib to monitor system resourcers (qtile).
 
-### Everything
-
-#### Official Repos
-
-```
-sudo pacman -S zsh curl git base-devel vim xorg bspwm sxhkd feh picom lxsession gtk2 gtk3 gtk4 breeze-gtk breeze-icons discord flameshot thunar pavucontrol vlc gimp eog blueman kdenlive obs-studio handbrake gnome-calculator gedit grub-customizer gucharmap htop steam retroarch acpi xsel ttf-nerd-fonts-symbols noto-fonts ttf-fira-code playerctl python-psutil plasma dolphin gwenview okular kitty
-```
-
-#### AUR
-
-```
-yay -S tulizu tbsm polybar mocu-xcursor megasync-bin thunar-megasync-bin spotify evince-no-gnome droidcam vscodium-bin brave-bin cmst beautyline
-```
