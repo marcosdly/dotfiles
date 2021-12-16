@@ -126,7 +126,7 @@ Programs that I use all the time.
 
 #### Official Repositories
 
-1. `qalculator-gtk`: Graphical calculator.
+1. `galculator`: Graphical calculator.
 
 #### AUR
 
@@ -141,6 +141,12 @@ Applications that I don't use so often, but inevitably use.
 
 1. `grub-customizer`: Graphical settings manager for grub2.
 2. `htop`: System monitor.
+3. `cbatticon`: Battery applet.
+
+#### AUR
+
+1. `volctl`: Per-application volume control.
+2. `brightness-controller-git`: Backlight control. 
 
 ### Dependencies
 
@@ -155,4 +161,3 @@ These are dependencies that are not installed automatically with their respectiv
 5. `ttf-fira-code`: VSCodium's font.
 6. `playerctl`: Media player controller that I use with spotify.
 7. `python-psutil`: python lib to monitor system resourcers (qtile).
-
