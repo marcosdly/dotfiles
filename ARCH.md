@@ -64,6 +64,7 @@ Basic stuff needed to build a graphic environment with a tiling window manager.
 7. `picom`: Compositor.
 8. `lxsession`: Policy kit.
 9. `rofi`: Application launcher.
+10. `network-manager-applet`: Applet for managing NetworkManager.
 
 #### AUR
 
@@ -71,7 +72,6 @@ Basic stuff needed to build a graphic environment with a tiling window manager.
 2. `tbsm`: CLI login manager.
 3. `polybar`: Status bar.
 4. `cmst`: Qt based GUI for connman with applet.
-5. `network-manager-applet`: Applet for managing NetworkManager.
 
 ### Appearance
 
