@@ -20,7 +20,7 @@ import subprocess
 from libqtile import hook
 
 mod = "mod4"
-terminal = "alacritty"
+terminal = "kitty"
 
 keys = [
     # Switch between windows
@@ -74,15 +74,18 @@ keys = [
 ]
 
 groups = [
-    Group("1", matches=[Match(wm_class=["brave-browser"])]),
+    Group("1", matches=[Match(wm_class=["brave-browser"]),
+                        Match(wm_class=["librewolf"])
+                       ]
+         ),
     Group("2"),
     Group("3"),
     Group("4"),
     Group("5"),
     Group("6"),
     Group("7"),
-    Group("8", matches=[Match(wm_class=["discord"])]),
-    Group("9")
+    Group("8"),
+    Group("9", matches=[Match(wm_class=["discord"])])
 ]
 
 for i in groups:
@@ -101,19 +104,26 @@ for i in groups:
     ])
 
 layouts = [
-    layout.Columns(border_focus='#35d12a'),
+    layout.Columns( 
+        border_focus='#35d12a',
+        border_width=2
+    ),
     layout.Max(),
+    # layout.Slice(),
     # Try more layouts by unleashing below layouts.
     # layout.Stack(num_stacks=2),
     # layout.Bsp(),
-    # layout.Matrix(),
+    layout.Matrix(
+        border_focus='35d12a',
+        border_width=2
+    )
     # layout.MonadTall(),
     # layout.MonadWide(),
     # layout.RatioTile(),
     # layout.Tile(),
     # layout.TreeTab(),
     # layout.VerticalTile(),
-    # layout.Zoomy(),
+    # layout.Zoomy()
 ]
 
 screens = [
@@ -128,18 +138,23 @@ screens = [
                 ),
                 widget.Sep(),
                 widget.CurrentLayout(),
+                widget.Sep(),
+                widget.WindowCount(
+                    show_zero=True,
+                    text_format='{num} Windows'
+                ),
                 widget.Spacer(length=bar.STRETCH),
                 widget.Systray(),
                 widget.Sep(),
                 widget.Net(),
-                widget.Sep(),
-                widget.Backlight(
-                    backlight_name='intel_backlight',
-                    brightness_file='/sys/class/backlight/intel_backlight/actual_brightness',
-                    max_brightness_file='/sys/class/backlight/intel_backlight/max_brightness',
-                    format='BRIGHT {percent:2.0%}'
-#                    font="monospace"
-                ),
+                #widget.Sep(),
+                #widget.Backlight(
+                #    backlight_name='intel_backlight',
+                #    brightness_file='/sys/class/backlight/intel_backlight/actual_brightness',
+                #    max_brightness_file='/sys/class/backlight/intel_backlight/max_brightness',
+                #    format='BRIGHT {percent:2.0%}'
+                #    font="monospace"
+                #),
                 widget.Sep(),
                 widget.CPU(),
                 widget.Sep(),
@@ -147,27 +162,27 @@ screens = [
                     format='RAM {MemUsed:.0f}{mm}/{MemTotal:.0f}{mm}'
                 ),
                 widget.Sep(),
-                widget.PulseVolume(
-                    get_volume_command='awk -F\"[][]\" \'/Left:/ { print $2 }\' <(amixer sget Master)',
-                    limit_max_volume=True,
-                    fmt='VOL {}'
-                ), 
-                widget.Sep(),
-                widget.Battery(
-                    charge_char='^',
-                    discharge_char='v',
-                    empty_char='e',
-                    full_char='f',
-                    format='{char} {percent:2.0%} {hour:d}:{min:02d} {watt:.2f} W',
-                    low_percentage=0.2,
-                    hide_threshold=1,
-                    notify_below=0.3
-                ),
-                widget.Sep(),
                 widget.Clock(format='%a %m/%d/%Y %I:%M %p'),
                 widget.Sep()
             ],
-            24,
+            20,
+        ),
+        top=bar.Bar(
+            [            
+                widget.TaskList(
+                    icon_size=0,
+                    highlight_method='block',
+                    rounded=False,
+                    urgent_alert_method='block',
+                    title_width_method='uniform',
+                    margin=0,
+                    padding=0,
+                    padding_x=3,
+                    padding_y=2,
+                    fontsize=11
+                )
+            ],
+            20,
         ),
     ),
 ]
@@ -190,8 +205,8 @@ cursor_warp = False
 floating_layout = layout.Floating(float_rules=[
     # Run the utility of `xprop` to see the wm class and name of an X client.
     *layout.Floating.default_float_rules,
-    Match(wm_class='gnome-calculator'), # Gnome calculator
-    Match(wm_class='gedit'), # gedit
+    Match(wm_class='galculator'), # Gnome calculator
+    Match(wm_class='featherpad'), # gedit
 ])
 auto_fullscreen = True
 focus_on_window_activation = "smart"

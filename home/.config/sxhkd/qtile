@@ -1,0 +1,25 @@
+# ███████╗██╗  ██╗██╗  ██╗██╗  ██╗██████╗ 
+# ██╔════╝╚██╗██╔╝██║  ██║██║ ██╔╝██╔══██╗
+# ███████╗ ╚███╔╝ ███████║█████╔╝ ██║  ██║
+# ╚════██║ ██╔██╗ ██╔══██║██╔═██╗ ██║  ██║
+# ███████║██╔╝ ██╗██║  ██║██║  ██╗██████╔╝
+# ╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝╚═════╝ 
+# sxhkd's bspwm 1 monitor configuration
+# Check marcosdly/dotfiles on GitHub
+
+# make sxhkd reload its configuration files:
+super + Escape
+	pkill -USR1 -x $("sxhkd -c ${HOME}/.config/sxhkd/qtile")
+
+# launches flameshot
+#Print
+#	flameshot gui
+
+# Spotify
+super + Left
+	playerctl --player=spotify previous
+super + Right
+	playerctl --player=spotify next
+super + Up
+	playerctl --player=spotify play-pause
+
