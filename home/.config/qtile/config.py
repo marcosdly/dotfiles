@@ -74,8 +74,10 @@ keys = [
 ]
 
 groups = [
-    Group("1", matches=[Match(wm_class=["brave-browser"]),
-                        Match(wm_class=["librewolf"])
+    Group("1", matches=[
+                        Match(wm_class=["brave-browser"]),
+                        Match(wm_class=["librewolf"]),
+                        Match(wm_class=["firefox"])
                        ]
          ),
     Group("2"),
@@ -205,8 +207,8 @@ cursor_warp = False
 floating_layout = layout.Floating(float_rules=[
     # Run the utility of `xprop` to see the wm class and name of an X client.
     *layout.Floating.default_float_rules,
-    Match(wm_class='galculator'), # Gnome calculator
-    Match(wm_class='featherpad'), # gedit
+    Match(wm_class='galculator'),
+    Match(wm_class='featherpad')
 ])
 auto_fullscreen = True
 focus_on_window_activation = "smart"
@@ -217,9 +219,20 @@ reconfigure_screens = True
 auto_minimize = True
 
 @hook.subscribe.startup_once
-def autostart():
-        home = os.path.expanduser('~/autostart.sh')
-        subprocess.call([home])
+def startup_once():
+    programs = [
+        ['xsetroot', '-cursor_name', 'left_ptr'],
+        ['setxkbmap', 'br'],
+        ['xset', '-dpms', 's', 'off'],
+        ['picom'],
+        ['lxsession'],
+        ['sxhkd', '-c', '~/.config/sxhkd/qtile'],
+        ['nm-applet'],
+        ['volctl'],
+        ['cbatticon', '-u', '20', '-i', 'standard', '-l', '30', '-r', '15', 'BAT0']
+    ]
+    for command in programs:
+        subprocess.Popen(command)
 
 # XXX: Gasp! We're lying here. In fact, nobody really uses or cares about this
 # string besides java UI toolkits; you can see several discussions on the
