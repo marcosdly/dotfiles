@@ -104,7 +104,7 @@ Applications that I use to manage, play and manipulate media
 5. `vlc`: Media player.
 6. `blueman`: Bluetooth manager.
 7. `pavucontrol`: PulseAudio volume controller.
-8. `flameshot`: Screenshot tool.
+8. `screengrab`: Screenshot tool.
 9. `pcmanfm-qt`: Graphical file manager.
 10. `discord`: Social network.
 11. `transmission-qt`: Torrent client.
