@@ -176,6 +176,7 @@ screens = [
                     highlight_method='block',
                     rounded=False,
                     urgent_alert_method='block',
+                    urgent_border='782121',
                     title_width_method='uniform',
                     margin=0,
                     padding=0,
