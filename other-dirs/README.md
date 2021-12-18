@@ -14,3 +14,5 @@ All the paths here work for sure in Arch Linux. I didn't had much experience wit
 	* Touchpad's configuration.
 4. `tulizu.service` - /etc/systemd/system/
 	* Systemd service to run tulizu in case it's not automatically generated.
+5. `nothing.zsh-theme` - ~/.oh-my-zsh/custom/themes/
+	* ZSH Shell theme (oh-my-zsh).
