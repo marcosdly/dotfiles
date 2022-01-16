@@ -147,6 +147,7 @@ Applications that I don't use so often, but inevitably use.
 
 1. `volctl`: Per-application volume control.
 2. `brightness-controller-git`: Backlight control. 
+3. `pamac-tray`: Update notifier/Graphical package manager.
 
 ### Dependencies
 

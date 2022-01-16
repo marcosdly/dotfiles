@@ -74,20 +74,68 @@ keys = [
 ]
 
 groups = [
-    Group("1", matches=[
-                        Match(wm_class=["brave-browser"]),
-                        Match(wm_class=["librewolf"]),
-                        Match(wm_class=["firefox"])
-                       ]
-         ),
-    Group("2"),
-    Group("3"),
-    Group("4"),
-    Group("5"),
-    Group("6"),
-    Group("7"),
-    Group("8"),
-    Group("9", matches=[Match(wm_class=["discord"])])
+    Group(
+        name="1",
+        label="Web",
+        matches=[
+            Match(wm_class=["brave-browser"]),
+            Match(wm_class=["librewolf"]),
+            Match(wm_class=["firefox"])
+        ]
+    ),
+    Group(
+        name="2",
+        label="CLI",
+        matches=[
+            Match(wm_class=["kitty"]),
+            Match(wm_class=["alacritty"]),
+            Match(wm_class=["xfce4-terminal"])
+        ]
+    ),
+    Group(
+        name="3",
+        label="Dev",
+        matches=[
+            Match(wm_class=["vscodium"]),
+            Match(wm_class=["rstudio"])
+        ]
+    ),
+    Group(
+        name="4",
+        label="Doc",
+        matches=[
+            Match(wm_class=["libreoffice"]),
+            Match(wm_class=["tm"]),
+            Match(wm_class=["pr"]),
+            Match(wm_class=["pm"])
+        ]
+    ),
+    Group(
+        name="5",
+        label="Media",
+        matches=[
+            Match(wm_class=["spotify"]),
+            Match(wm_class=["vlc"])
+        ]
+    ),
+    Group(
+        name="6",
+        label="Social",
+        matches=[
+            Match(wm_class=["discord"])
+        ]
+    ),
+    Group(
+        name="7",
+        label="Game",
+        matches=[
+            Match(wm_class=["Steam"])
+        ]
+    ),
+    Group(
+        name="8",
+        label="Other"
+    )
 ]
 
 for i in groups:
@@ -136,7 +184,8 @@ screens = [
                 widget.GroupBox(
                     borderwidth=2,
                     disable_drag=True,
-                    other_current_screen_border='747821'
+                    other_current_screen_border='747821',
+                    fmt='{label}'
                 ),
                 widget.Sep(),
                 widget.CurrentLayout(),
@@ -230,7 +279,8 @@ def startup_once():
         ['sxhkd', '-c', '~/.config/sxhkd/qtile'],
         ['nm-applet'],
         ['volctl'],
-        ['cbatticon', '-u', '20', '-i', 'standard', '-l', '30', '-r', '15', 'BAT0']
+        ['cbatticon', '-u', '20', '-i', 'standard', '-l', '30', '-r', '15', 'BAT0'],
+        ['pamac-tray']
     ]
     for command in programs:
         subprocess.Popen(command)
