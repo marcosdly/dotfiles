@@ -15,6 +15,16 @@
 " Disable compatibility with vi which can cause unexpected issues.
 set nocompatible
 
+" Make commands case insensitive
+set ignorecase
+
+" Set smartcase (use \c or \C to ser case sensitiveness)
+" /IgNoReCaSe\c to ignore case, /ignorecase\C to make the text case sensitive
+set smartcase
+
+" Case-insensitive file paths
+set wildignorecase
+
 " Fix kitty black bars on vim
 let &t_ut=''
 
@@ -99,18 +109,23 @@ call plug#begin('~/.vim/plugged')
 	Plug 'dracula/vim', { 'as': 'dracula' } 
 	Plug 'dikiaap/minimalist'
 	Plug 'wojciechkepka/vim-github-dark', { 'as': 'ghdark' }
+	Plug 'gosukiwi/vim-atom-dark', { 'as': 'atom-dark' }
+	Plug 'rakr/vim-one' 
 	Plug 'vim-airline/vim-airline'
 	Plug 'vim-airline/vim-airline-themes'
 	
 	" Funcionality
 	Plug 'sheerun/vim-polyglot'
 	Plug 'christoomey/vim-system-copy'
+	Plug 'preservim/nerdtree'
+	Plug 'vim-scripts/bufexplorer.zip'
+	Plug 'tpope/vim-commentary'
 
 call plug#end()
 
 " Set color scheme. It needs to be placed here because
 " it can be installed via plugin.
-colorscheme monokai_pro
+colorscheme one
 
 " }}}
 
@@ -119,13 +134,13 @@ colorscheme monokai_pro
 " General
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#formatter = 'default'
-let g:airline#extensions#tabline#left_sep = '▶'
+let g:airline#extensions#tabline#left_sep = ''
 let g:airline#extensions#tabline#left_alt_sep = ' '
-let g:airline#extensions#tabline#right_sep = '◀'
+let g:airline#extensions#tabline#right_sep = ''
 let g:airline#extensions#tabline#right_alt_sep = ' '
-let g:airline_left_sep = '▶'
+let g:airline_left_sep = ''
 let g:airline_left_alt_sep = ' '
-let g:airline_right_sep = '◀'
+let g:airline_right_sep = ''
 let g:airline_right_alt_sep = ' '
 
 " Enable powerline fonts
@@ -134,7 +149,7 @@ let g:airline_powerline_fonts = 1
 " Theme
 " Set theme with 'AirlineTheme <theme>'
 " Actual theme: wombat
-let g:airline_theme = 'wombat'
+let g:airline_theme = 'one'
 
 " Symbols
 if !exists('g:airline_symbols')
@@ -187,6 +202,23 @@ noremap <c-up> <c-w>+
 noremap <c-down> <c-w>-
 noremap <c-left> <c-w>>
 noremap <c-right> <c-w><
+
+" NERDTree
+nnoremap <leader>n :NERDTreeFocus<CR>
+nnoremap <C-n> :NERDTree<CR>
+nnoremap <C-t> :NERDTreeToggle<CR>
+nnoremap <C-f> :NERDTreeFind<CR>
+
+" Buffer
+" Close the current buffer
+nnoremap <leader>bd :bdelete<cr>:tabclose<cr>gT
+
+" Close all the buffers
+nnoremap <leader>ba :bufdo bd<cr>
+
+" Next, Previous
+nnoremap <leader>l :bnext<cr>
+nnoremap <leader>h :bprevious<cr>
 
 " }}}
 
