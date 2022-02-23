@@ -73,11 +73,11 @@
     }
   ],
   // Live Server
-  "liveServer.settings.AdvanceCustomBrowserCmdLine": "google-chrome-stable",
+  "liveServer.settings.AdvanceCustomBrowserCmdLine": "brave-browser",
   // vscode
   "editor.fontLigatures": true,
   "editor.fontFamily": "'fira code'",
-  "editor.cursorStyle": "block",
+  "editor.cursorStyle": "block-outline",
   "editor.multiCursorModifier": "ctrlCmd",
   "editor.wordWrap": "on",
   "editor.formatOnSave": true,
@@ -106,6 +106,14 @@
   "python.linting.flake8Enabled": false,
   "python.testing.unittestEnabled": true,
   "python.linting.enabled": true,
+  // Bracket Pair Colorizer
+  "bracketPairColorizer.forceUniqueOpeningColor": true,
+  "bracketPairColorizer.forceIterationColorCycle": true,
+  "bracketPairColorizer.colorMode": "Independent",
+  "bracketPairColorizer.highlightActiveScope": true,
+  "bracketPairColorizer.showBracketsInGutter": true,
+  "bracketPairColorizer.showVerticalScopeLine": true,
+  "bracketPairColorizer.showHorizontalScopeLine": true,
   // Code Runner
   "code-runner.ignoreSelection": true,
   "code-runner.runInTerminal": true,
