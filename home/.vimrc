@@ -12,6 +12,9 @@
 
 " OPTIONS {{{
 
+" Enable true colors support
+set termguicolors
+
 " Disable compatibility with vi which can cause unexpected issues.
 set nocompatible
 
@@ -39,6 +42,9 @@ filetype indent on
 
 " Turn syntax highlighting on.
 syntax on
+
+" Turn on syntax autocompletion
+set omnifunc=syntaxcomplete#Complete
 
 " Add numbers to each line on the left-hand side.
 set number
@@ -109,23 +115,115 @@ call plug#begin('~/.vim/plugged')
 	Plug 'dracula/vim', { 'as': 'dracula' } 
 	Plug 'dikiaap/minimalist'
 	Plug 'wojciechkepka/vim-github-dark', { 'as': 'ghdark' }
-	Plug 'gosukiwi/vim-atom-dark', { 'as': 'atom-dark' }
 	Plug 'rakr/vim-one' 
 	Plug 'vim-airline/vim-airline'
 	Plug 'vim-airline/vim-airline-themes'
+	Plug 'ryanpcmcquen/true-monochrome_vim'
+	Plug 'cocopon/iceberg.vim'
+	Plug 'embark-theme/vim', { 'as': 'embark', 'branch': 'main' }
+	Plug 'ayu-theme/ayu-vim'
+	Plug 'pineapplegiant/spaceduck'
+	Plug 'bluz71/vim-moonfly-colors'
 	
 	" Funcionality
-	Plug 'sheerun/vim-polyglot'
 	Plug 'christoomey/vim-system-copy'
 	Plug 'preservim/nerdtree'
 	Plug 'vim-scripts/bufexplorer.zip'
 	Plug 'tpope/vim-commentary'
+	Plug 'ycm-core/YouCompleteMe'
+	Plug 'liuchengxu/vim-which-key', { 'on': ['WhichKey', 'WhichKey!'] }
+	Plug 'ctrlpvim/ctrlp.vim'
+	Plug 'amix/open_file_under_cursor.vim'
+	Plug 'tpope/vim-fugitive'
+	Plug 'voldikss/vim-floaterm'
+	Plug 'lilydjwg/colorizer'
+	Plug 'luochen1990/rainbow'
+	Plug 'sakshamgupta05/vim-todo-highlight'
+	" Plug 'BourgeoisBear/clrzr' " Not working in Vim 8.1 for some reason
+	" Plug 'bignimbus/you-are-here.vim' " Requires Vim 8.2
+
+	" Programming languages in general
+	Plug 'sheerun/vim-polyglot'
+	Plug 'dense-analysis/ale'
+	Plug 'vim-test/vim-test'
+
+	" Javascript
+	Plug 'ternjs/tern_for_vim', { 'do': 'npm install' } 
+	Plug 'prettier/vim-prettier', {
+  		\ 'do': 'npm install --production',
+  		\ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'svelte', 'yaml', 'html'] }
+
+	" HTML
+	Plug 'AndrewRadev/tagalong.vim'
+	Plug 'alvan/vim-closetag'
 
 call plug#end()
 
 " Set color scheme. It needs to be placed here because
 " it can be installed via plugin.
-colorscheme one
+colorscheme moonfly
+
+" Ayu color-scheme
+let ayucolor="dark"
+
+" Moonfly color-scheme
+let g:moonflyCursorColor = 1
+let g:moonflyItalics 	 = 1
+
+" vim-which-key
+let g:which_key_vertical = 1
+
+" rainbow
+let g:rainbow_active = 1
+let g:rainbow_conf = {
+\	 'guifgs': ['yellow', 'magenta', 'cyan', 'green', 'slateblue',
+\	 'violet', 'purple', 'lightblue', 'lightmagenta', 'lightgreen',
+\	 'lightcyan', 'seagreen', 'red'],
+\	 'ctermfgs': ['yellow', 'magenta', 'cyan', 'blue', 'green',
+\	 'red', 'lightblue', 'lightmagenta', 'lightgreen', 'lightcyan'],
+\	 'operators': '',
+\	 'separately': {
+\		 '*': {
+\		 	'parentheses': ['start=/(/ end=/)/ fold', 'start=/\[/ end=/\]/ fold', 'start=/{/ end=/}/ fold'],
+\		 },
+\		 'text': 0,
+\		 'markdown': 0,
+\	 }
+\ }
+
+" vim-todo-highlight
+let g:todo_highlight_config =  {
+\    'TODO': {
+\    	'gui_fg_color': 'black',
+\    	'gui_bg_color': 'yellow',
+\    	'cterm_fg_color': 'black',
+\    	'cterm_bg_color': 'yellow'
+\ 	 },
+\    'BUG': {
+\    	'gui_fg_color': 'white',
+\    	'gui_bg_color': 'red',
+\    	'cterm_fg_color': 'white',
+\    	'cterm_bg_color': 'red'
+\ 	 },
+\    'FIXME': {
+\    	'gui_fg_color': 'black',
+\    	'gui_bg_color': 'green',
+\    	'cterm_fg_color': 'black',
+\    	'cterm_bg_color': 'green'
+\ 	 },
+\    'NOTE': {
+\    	'gui_fg_color': 'black',
+\    	'gui_bg_color': 'magenta',
+\    	'cterm_fg_color': 'black',
+\    	'cterm_bg_color': 'magenta'
+\ 	 },
+\ }
+
+" TODO: Test
+" BUG: Test
+" FIXME: Test
+" NOTE: Test
+
 
 " }}}
 
@@ -149,7 +247,7 @@ let g:airline_powerline_fonts = 1
 " Theme
 " Set theme with 'AirlineTheme <theme>'
 " Actual theme: wombat
-let g:airline_theme = 'one'
+let g:airline_theme = 'moonfly'
 
 " Symbols
 if !exists('g:airline_symbols')
@@ -175,7 +273,7 @@ set noshowmode
 " MAPPINGS {{{
 
 " Set the backslash as the leader key.
-let mapleader = '\'
+let mapleader = ' '
 
 " Press \\ to jump back to the last cursor position.
 nnoremap <leader>\ ``
@@ -187,7 +285,7 @@ nnoremap <leader>\ ``
 nnoremap <silent> <leader>p :%w !lp<CR>
 
 " Press the space bar to type the : character in command mode.
-nnoremap <space> :
+" nnoremap <space> :
 
 " You can split the window in Vim by typing :split or :vsplit.
 " Navigate the split view easier by pressing CTRL+j, CTRL+k, CTRL+h, or CTRL+l.
@@ -209,16 +307,106 @@ nnoremap <C-n> :NERDTree<CR>
 nnoremap <C-t> :NERDTreeToggle<CR>
 nnoremap <C-f> :NERDTreeFind<CR>
 
-" Buffer
+" Which key
+nnoremap <silent> <leader> :WhichKey '<space>'<CR>
+
+" BUFFER {{{
+
 " Close the current buffer
-nnoremap <leader>bd :bdelete<cr>:tabclose<cr>gT
+nnoremap <leader>bd :bdelete<cr>
+nnoremap <leader>Bd :bdelete!<cr>
 
 " Close all the buffers
 nnoremap <leader>ba :bufdo bd<cr>
+nnoremap <leader>Ba :bufdo! bd<cr>
 
-" Next, Previous
+" Next, Previous buffer
 nnoremap <leader>l :bnext<cr>
 nnoremap <leader>h :bprevious<cr>
+
+" }}}
+
+" TAB {{{
+
+" Next/Previos tab
+nnoremap <leader>L :tabnext<cr>
+nnoremap <leader>H :tabprevious<cr>
+
+" Close current tab
+nnoremap <leader>bD :tabclose<cr>gT
+
+" }}}
+
+" TERMINAL (biult-in) {{{
+
+" set termwinkey=<C-W>
+
+" Next tab
+" tnoremap <leader>L <C-W>gt
+
+" Previous tab
+" tnoremap <leader>H <C-W>gT
+
+" Next/Previous buffer
+" tnoremap <leader>l :bnext<cr>
+" tnoremap <leader>h :bprevious<cr>
+
+" Close current buffer
+" tnoremap <leader>bd :bdelete<cr>
+
+" Close current tab
+" tnoremap <leader>bD :tabclose<cr>gT
+
+" Show possible key bindings
+" tnoremap <silent> <C-w>h :WhichKey '<C-w>'<CR>
+
+" }}}
+
+" TERMINAL (floaterm) {{{
+
+let g:floaterm_wintype    = 'split'
+let g:floaterm_position   = 'botright'
+let g:floaterm_height 	  = 0.4
+
+" Always hide previous floaterms before switching of openini another one
+let g:floaterm_autohide   = 2 
+
+" Wheter to enter Terminal-mode after opening a floterm
+let g:floaterm_autoinsert = v:true
+
+" These will not work!
+" let g:floaterm_keymap_new    = '<C-t>n'
+" let g:floaterm_keymap_prev   = '<C-t>h'
+" let g:floaterm_keymap_next   = '<C-t>l'
+" let g:floaterm_keymap_kill 	 = '<C-t>w'
+" let g:floaterm_keymap_toggle = '<C-t>t'
+
+" Open new terminal
+nnoremap <silent> <C-t>n :FloatermNew<CR>
+tnoremap <silent> <C-t>n :FloatermNew<CR>
+
+" Close terminal
+tnoremap <silent> <C-t>w :FloatermKill<CR>
+
+" Toggle terminal
+tnoremap <silent> <C-t>t :FloatermToggle<CR>
+nnoremap <silent> <C-t>t :FloatermToggle<CR>
+
+" Next/Previous terminal
+tnoremap <silent> <C-t>h :FloatermPrev<CR>
+nnoremap <silent> <C-t>h :FloatermPrev<CR>
+
+tnoremap <silent> <C-t>l :FloatermNext<CR>
+nnoremap <silent> <C-t>l :FloatermNext<CR>
+
+" }}}
+
+" PLUGINS {{{
+
+" you-are-here.vim (Require Vim 8.2)
+" nnoremap <silent> <leader>y :call you_are_here#ToggleFor(5000)<CR>
+
+" }}}
 
 " }}}
 
@@ -266,4 +454,4 @@ set statusline+=\ ascii:\ %b\ hex:\ 0x%B\ row:\ %l\ col:\ %c\ percent:\ %p%%\
 " Show the status on the second to last line.
 set laststatus=2
 
-" }}}
+
