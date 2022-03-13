@@ -43,4 +43,16 @@ zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|=*' 'l:|=* r:|=
 alias ls="ls --color"
 
 # Plugins
+source $HOME/.zplugins/zsh-nvm/zsh-nvm.plugin.zsh
 source $HOME/.zplugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source $HOME/.zplugins/zcolors/zcolors.plugin.zsh
+source $HOME/.zplugins/zshrc/zshrc.plugin.zsh
+source $HOME/.zplugins/zsh-not-vim/zsh-not-vim.plugin.zsh
+source $HOME/.zplugins/setenv/setenv.plugin.zsh
+source $HOME/.zplugins/doas-zsh-plugin/doas.plugin.zsh
+source $HOME/.zplugins/zsh-auto-notify/auto-notify.plugin.zsh
+
+# zsh-auto-notify configuration
+export AUTO_NOTIFY_THRESHOLD=10
+export AUTO_NOTIFY_TITLE="\"%command\" has just finished running."
+export AUTO_NOTIFY_BODY="(Total time: %elapsed) (Exit code: %exit_code)"
