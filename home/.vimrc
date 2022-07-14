@@ -139,11 +139,15 @@ call plug#begin('~/.vim/plugged')
 	Plug 'lilydjwg/colorizer'
 	Plug 'luochen1990/rainbow'
 	Plug 'sakshamgupta05/vim-todo-highlight'
+	Plug 'jiangmiao/auto-pairs'
+	Plug 'tpope/vim-surround'
+	Plug 'vim-pandoc/vim-pandoc'
+	Plug 'vim-pandoc/vim-pandoc-syntax'
 	" Plug 'BourgeoisBear/clrzr' " Not working in Vim 8.1 for some reason
 	" Plug 'bignimbus/you-are-here.vim' " Requires Vim 8.2
 
 	" Programming languages in general
-	Plug 'sheerun/vim-polyglot'
+	Plug 'SHEERUN/vim-polyglot'
 	Plug 'dense-analysis/ale'
 	Plug 'vim-test/vim-test'
 
