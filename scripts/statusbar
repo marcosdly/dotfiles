@@ -105,7 +105,7 @@ clock() {
 
 main() {
 	while true; do
-		xsetroot -name "^c#eeeeee^^b#949494^ $(usbmon) ^c#eeeeee^^b#36c692^ $(ram) ^c#eeeeee^^b#ff5189^ $(cpu) ^c#eeeeee^^b#ae81ff^ $(network) ^c#eeeeee^^b#74b2ff^ $(clock) "
+		xsetroot -name "^c#282a36^^b#50fa7b^ $(ram) ^c#282a36^^b#bd93f9^ $(cpu) ^c#282a36^^b#ffb86c^ $(network) ^c#282a36^^b#8be9fd^ $(clock) "
 		sleep 1
 	done
 }
