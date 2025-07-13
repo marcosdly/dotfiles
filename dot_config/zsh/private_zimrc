@@ -60,5 +60,7 @@ zmodule zsh-users/zsh-autosuggestions
 zmodule Senderman/doas-zsh-plugin
 # export SUDOBIN=sudo # Custom prefix instead of doas
 
+zmodule freak2geek/zshrc
+
 # End user pluigns }}}
 
